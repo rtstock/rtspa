@@ -1,0 +1,26 @@
+<div> <a ui-sref=overview class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a> 
+<h2>Analytics <small>Analyze stock trading data to discover patterns</small></h2> 
+<span class="glyphicon glyphicon-dashboard bg-fade"></span> 
+<div class=jumbotron> 
+<div class=container> 
+<p class="tab">Features:  Prices, Adjclose, Returns, Correlation, Covariance, Intraday, AggregatedReturns</p>
+<form action="/" method="post">
+	Feature: <input name="feature" type="text" /><br><br>
+	Tickers: <input name="tickerstring" type="text" /><br><br>
+	From Date: <input name="fromdate" type="text" /><br><br>
+	To Date: <input name="todate" type="text" /><br><br>	
+	<input value="Get File" class="btn btn-primary btn-lg btn-outline btn-rounded" type="submit" /><br><br>
+</form>
+</p> 
+</div> 
+</div> 
+</div>
+<script>
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "pythoncode.py?text=" + text, true);
+	xhr.responseType = "JSON";
+	xhr.onload = function(e) {
+	  var arrOfStrings = JSON.parse(xhr.response);
+	}
+	xhr.send();
+</script>
